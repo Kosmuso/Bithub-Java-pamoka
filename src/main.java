@@ -118,6 +118,8 @@ public class main {
                 x[i] = 0;
             }
         }
+
+
     }
 
 
