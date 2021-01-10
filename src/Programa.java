@@ -14,7 +14,7 @@ public class Programa
     /*    KontraktoDarbuotojas testinisDarbuotojas = new KontraktoDarbuotojas("Vardenis", "Pavardenis", 1000, 16);
         System.out.println(testinisDarbuotojas.pilnasDarbuotojoIsvedimas());*/
 
-        String failoNuoroda = "data.txt";
+        String failoNuoroda = "data2.txt";
         File failas = new File(failoNuoroda);
         ArrayList<Darbuotojas> darbuotojai = new ArrayList<>();
         try
