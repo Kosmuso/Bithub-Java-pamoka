@@ -1,0 +1,9 @@
+Stasys,Balamutas,1200,9,kontrakto
+Juozapas,Pilvauskas,1300,13,kontrakto
+Gilbertas,Lameroidas,1050,agenturos
+Kestutis,Pempe,670,agenturos
+Austachijus,Vamzdys,2200,19,kontrakto
+Euzebijus,Tartalas,2600,26,kontrakto
+Sedrikas,Pimpaila,300,agenturos
+Egidijus,Galvijas,780,agenturos
+Sel,Kul,1200,45,kontrakto
