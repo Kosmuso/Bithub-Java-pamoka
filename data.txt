@@ -1,5 +1,5 @@
 Stasys,Balamutas,1200,13,kontrakto
-Juozapas,Pilvauskas,1300,13,kontrakto
+Juozapas,Pilvauskas,1300,9,kontrakto
 Gilbertas,Lameroidas,1050,agenturos
 Kestutis,Pempe,670,agenturos
 Austachijus,Vamzdys,2200,19,kontrakto

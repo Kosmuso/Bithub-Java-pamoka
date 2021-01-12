@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ProgramaJava
 {
@@ -12,6 +9,8 @@ public class ProgramaJava
 
         File failas = new File("data.txt");
         ArrayList<DarbuotojoClass> darbuotojai = new ArrayList<>();
+        ArrayList<DarbuotojoClass> kontraktoDarb = new ArrayList<>();
+        ArrayList<DarbuotojoClass> agenturosDarb = new ArrayList<>();
         try
         {
             Scanner failoSkaitytuvas = new Scanner(failas);
@@ -28,6 +27,7 @@ public class ProgramaJava
                     DarbuotojoClass tempDarbuotojas = new Kontraktininkas(darbuotojoDuomenys.get(0), darbuotojoDuomenys.get(1), tempAlga, tempStazas);
 
                     darbuotojai.add(tempDarbuotojas);
+                    kontraktoDarb.add(tempDarbuotojas);
                 }
 
                 if (darbuotojoDuomenys.get(darbuotojoDuomenys.size() - 1).equals("agenturos"))
@@ -36,6 +36,7 @@ public class ProgramaJava
                     DarbuotojoClass tempDarbuotojas = new Agenturininkas(darbuotojoDuomenys.get(0), darbuotojoDuomenys.get(1), tempAlga);
 
                     darbuotojai.add(tempDarbuotojas);
+                    agenturosDarb.add(tempDarbuotojas);
                 }
 
 
@@ -43,21 +44,24 @@ public class ProgramaJava
 
 ////////////
 
-
             System.out.println("Firmoje is viso yra : " + darbuotojai.size() + " darbuotojai");
 
             System.out.println("Firmoje, didesne nei 1000 bazine alga gauna : " + algaBonus(darbuotojai) + " darbuotojai");
 
+            System.out.println("Daugiausiai uzdirba : " + daugiausiaiUzdirbantis(darbuotojai));
 
+            System.out.println("Darbuotojai dirbantys pagal kontrakta, viso per menesi uzdirba : " + kontArAgentViso(kontraktoDarb));
 
-            System.out.println("Daugiausiai uzdirba " + daugiausiaiUzdirbantis(darbuotojai));
+            System.out.println("Darbuotojai dirbantys per agentura, viso per menesi uzdirba : " + kontArAgentViso(agenturosDarb));
 
-            for (int i = 0; i < darbuotojai.size(); i++)
+            System.out.println("Daugiausiai uzdirbantis agenturos darbuotojas : " + daugiausiaiUzdirbantis(agenturosDarb));
+
+            /*for (int i = 0; i < darbuotojai.size(); i++)
             {
                 System.out.println(darbuotojai.get(i).pilnasDarbuotojoIsvedimas());
-            }
+            }*/
 
-/////////////
+///////////
 
         }
         catch (FileNotFoundException e)
@@ -84,16 +88,27 @@ public class ProgramaJava
 
     public static String daugiausiaiUzdirbantis(ArrayList<DarbuotojoClass> darbuotojai)
     {
-        double maxAlga = 0;
+        double tempMax = 0;
         int indexas = 0;
         for (int i = 0; i < darbuotojai.size(); i++)
         {
-            if (maxAlga < darbuotojai.get(i).algosSkaiciavimas())
+            if (tempMax < darbuotojai.get(i).algosSkaiciavimas())
             {
+                tempMax = darbuotojai.get(i).algosSkaiciavimas();
                 indexas = i;
             }
         }
         return darbuotojai.get(indexas).pilnasVardas();
     }
 
+    public static double kontArAgentViso(ArrayList<DarbuotojoClass> darbuotojai)
+    {
+        double total = 0;
+        for (int i = 0; i < darbuotojai.size(); i++)
+        {
+            total += darbuotojai.get(i).algosSkaiciavimas();
+
+        }
+        return total;
+    }
 }
