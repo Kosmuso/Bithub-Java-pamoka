@@ -17,13 +17,13 @@ public class Kontraktininkas extends DarbuotojoClass
     public double algosSkaiciavimas()
     {
         double skaiciuojamaAlga = 0;
-        if (this.stazasMenesiais >= 12 && this.stazasMenesiais < 24)
+        if (this.stazasMenesiais >= 12)
         {
             skaiciuojamaAlga = this.alga * 1.2;
-        }
-        if (this.stazasMenesiais >= 24)
-        {
-            skaiciuojamaAlga = this.alga * 1.5;
+            if (this.stazasMenesiais >= 24)
+            {
+                skaiciuojamaAlga = this.alga * 1.5;
+            }
         }
         else
         {

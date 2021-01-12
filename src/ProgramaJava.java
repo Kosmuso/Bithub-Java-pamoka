@@ -52,10 +52,10 @@ public class ProgramaJava
 
             System.out.println("Daugiausiai uzdirba " + daugiausiaiUzdirbantis(darbuotojai));
 
-            /*for (int i = 0; i < darbuotojai.size(); i++)
+            for (int i = 0; i < darbuotojai.size(); i++)
             {
                 System.out.println(darbuotojai.get(i).pilnasDarbuotojoIsvedimas());
-            }*/
+            }
 
 /////////////
 
